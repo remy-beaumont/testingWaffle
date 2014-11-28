@@ -1,5 +1,6 @@
 #!/bin/sh
-apt-get install mono-devel
+sudo apt-get update -qq > /dev/null
+sudo apt-get install -qq mono-devel > /dev/null
 if test `uname` = Darwin; then
     cachedir=~/Library/Caches/KBuild
 else
