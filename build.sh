@@ -1,11 +1,11 @@
 #!/bin/sh
 
 # For centos
-wget http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-6.noarch.rpm
-sudo rpm -Uvh epel-release-6-6.rpm
-sudo rpm --import https://pgp.mit.edu/pks/lookup?op=get&search=0x3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
-sudo yum-config-manager --add-repo http://download.mono-project.com/repo/centos/
-sudo yum install --assumeyes mono-devel 
+#sudo rpm --import https://pgp.mit.edu/pks/lookup?op=get&search=0x3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
+#sudo yum-config-manager --add-repo http://download.mono-project.com/repo/centos/
+#sudo yum install --assumeyes mono-devel 
+
+sudo cd /etc/yum.repos.d/;wget http://download.opensuse.org/repositories/home:tpokorra:mono/CentOS_CentOS-6/home:tpokorra:mono.repo;yum install mono-opt
 
 if test `uname` = Darwin; then
     cachedir=~/Library/Caches/KBuild
