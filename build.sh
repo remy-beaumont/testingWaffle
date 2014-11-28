@@ -1,6 +1,10 @@
 #!/bin/sh
-sudo apt-get update -qq > /dev/null
-sudo apt-get install -qq mono-devel > /dev/null
+
+# For centos
+sudo rpm --import "https://pgp.mit.edu/pks/lookup?op=get&search=0x3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF"
+sudo yum-config-manager --add-repo http://download.mono-project.com/repo/centos/
+sudo yum install --assumeyes mono-devel 
+
 if test `uname` = Darwin; then
     cachedir=~/Library/Caches/KBuild
 else
