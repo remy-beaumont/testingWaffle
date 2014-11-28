@@ -1,10 +1,13 @@
-public class PartialProduct
+namespace Models
 {
-    public PartialProduct()
-    {
-    }
+	public class PartialProduct
+	{
+	    public PartialProduct()
+	    {
+	    }
 
-    public int Id { get; set; }
-    public string Name { get; set; }
-    public decimal Price { get; set; }
+	    public int Id { get; set; }
+	    public string Name { get; set; }
+	    public decimal Price { get; set; }
+	}
 }

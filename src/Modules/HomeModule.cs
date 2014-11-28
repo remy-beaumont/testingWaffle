@@ -1,4 +1,6 @@
-namespace WebApplication1
+using Models;
+
+namespace Modules
 {
     using Nancy;
     
