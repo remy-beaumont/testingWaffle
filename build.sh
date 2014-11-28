@@ -5,7 +5,9 @@
 #sudo yum-config-manager --add-repo http://download.mono-project.com/repo/centos/
 #sudo yum install --assumeyes mono-devel 
 
-sudo cd /etc/yum.repos.d/;wget http://download.opensuse.org/repositories/home:tpokorra:mono/CentOS_CentOS-6/home:tpokorra:mono.repo;yum install mono-opt
+cd /etc/yum.repos.d/
+sudo wget http://download.opensuse.org/repositories/home:tpokorra:mono/CentOS_CentOS-6/home:tpokorra:mono.repo 
+sudo yum install mono-opt
 
 if test `uname` = Darwin; then
     cachedir=~/Library/Caches/KBuild
