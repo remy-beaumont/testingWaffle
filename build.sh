@@ -7,7 +7,7 @@
 
 sudo wget http://download.opensuse.org/repositories/home:tpokorra:mono/CentOS_CentOS-6/home:tpokorra:mono.repo -O /etc/yum.repos.d/mono.repo
 sudo yum install mono-opt
-$PATH=$PATH:/opt/mono/bin
+PATH=$PATH:/opt/mono/bin
 
 if test `uname` = Darwin; then
     cachedir=~/Library/Caches/KBuild
