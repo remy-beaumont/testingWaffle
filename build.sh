@@ -49,11 +49,11 @@ if test ! -d packages/KoreBuild; then
 fi
 
 if ! type k > /dev/null 2>&1; then
-    source setup/kvm.sh
+    #source setup/kvm.sh
 fi
 
 if ! type k > /dev/null 2>&1; then
-    kvm upgrade
+    #kvm upgrade
 fi
 
 mono packages/Sake/tools/Sake.exe -I packages/KoreBuild/build -f makefile.shade "$@"
