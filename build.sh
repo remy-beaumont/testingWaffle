@@ -42,12 +42,7 @@ fi
 if ! type k > /dev/null 2>&1; then
     curl https://raw.githubusercontent.com/aspnet/Home/master/kvminstall.sh | sh && source ~/.kre/kvm/kvm.sh || wget https://raw.githubusercontent.com/aspnet/Home/master/kvminstall.sh | sh && source ~/.kre/kvm/kvm.sh 
     kvm upgrade
-    #source setup/kvm.sh
 fi
-
-#if ! type k > /dev/null 2>&1; then
-    #kvm upgrade
-#fi
 
 if test ! -d packages/KoreBuild; then
     mono .nuget/nuget.exe install KoreBuild -ExcludeVersion -o packages -nocache -pre

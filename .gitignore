@@ -21,5 +21,6 @@ _ReSharper.*
 /TestResult.xml
 /builds/local/
 *.dotCover
+packages
 /Packages.dgml
 secrets.config
