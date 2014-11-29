@@ -22,5 +22,4 @@ _ReSharper.*
 /builds/local/
 *.dotCover
 /Packages.dgml
-/packages
 secrets.config
