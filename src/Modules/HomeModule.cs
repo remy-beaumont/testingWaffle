@@ -8,7 +8,7 @@ namespace Modules
     {
         public HomeModule()
         {
-            Get["/foo"] = _ => {
+            Get["/foo2"] = _ => {
             	return new PartialProduct {Id=10202};
             };
         }
