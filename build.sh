@@ -1,4 +1,4 @@
-#!/bif test `uname` = Darwin; thenin/sh
+#!/bin/sh
 
 # install mono
 if ! type mono > /dev/null 2>&1; then
