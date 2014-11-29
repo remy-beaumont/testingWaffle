@@ -48,12 +48,12 @@ if test ! -d packages/KoreBuild; then
     mono .nuget/nuget.exe install Sake -version 0.2 -o packages -ExcludeVersion
 fi
 
-if ! type k > /dev/null 2>&1; then
+#if ! type k > /dev/null 2>&1; then
     #source setup/kvm.sh
-fi
+#fi
 
-if ! type k > /dev/null 2>&1; then
+#if ! type k > /dev/null 2>&1; then
     #kvm upgrade
-fi
+#fi
 
 mono packages/Sake/tools/Sake.exe -I packages/KoreBuild/build -f makefile.shade "$@"
