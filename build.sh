@@ -1,13 +1,20 @@
 #!/bin/sh
 
-# For centos
-#sudo rpm --import https://pgp.mit.edu/pks/lookup?op=get&search=0x3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
-#sudo yum-config-manager --add-repo http://download.mono-project.com/repo/centos/
-#sudo yum install --assumeyes mono-devel 
+# install mono
+if ! type mono > /dev/null 2>&1; then
+    if test `uname` = Darwin; then
+        MONO_VER="3.0.12"
+        wget "http://download.mono-project.com/archive/${MONO_VER}/macos-10-x86/MonoFramework-MDK-${MONO_VER}.macos10.xamarin.x86.dmg"
+        hdid "MonoFramework-MDK-${MONO_VER}.macos10.xamarin.x86.dmg"
+        sudo installer -pkg "/Volumes/Mono Framework MDK ${MONO_VER}/MonoFramework-MDK-${MONO_VER}.macos10.xamarin.x86.pkg" -target /
+    else
 
-sudo wget http://download.opensuse.org/repositories/home:tpokorra:mono/CentOS_CentOS-6/home:tpokorra:mono.repo -O /etc/yum.repos.d/mono.repo
-sudo yum install mono-opt
-PATH=$PATH:/opt/mono/bin
+        # For centos
+        sudo wget http://download.opensuse.org/repositories/home:tpokorra:mono/CentOS_CentOS-6/home:tpokorra:mono.repo -O /etc/yum.repos.d/mono.repo
+        sudo yum install mono-opt
+        PATH=$PATH:/opt/mono/bin
+    fi
+fi
 
 if test `uname` = Darwin; then
     cachedir=~/Library/Caches/KBuild
