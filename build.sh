@@ -11,7 +11,7 @@ if ! type mono > /dev/null 2>&1; then
 
         # For centos
         sudo wget http://download.opensuse.org/repositories/home:tpokorra:mono/CentOS_CentOS-6/home:tpokorra:mono.repo -O /etc/yum.repos.d/mono.repo
-        sudo yum install mono-opt
+        sudo yum install mono-opt-devel
         PATH=$PATH:/opt/mono/bin
     fi
 fi
