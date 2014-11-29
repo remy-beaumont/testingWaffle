@@ -48,9 +48,11 @@ if test ! -d packages/KoreBuild; then
     mono .nuget/nuget.exe install Sake -version 0.2 -o packages -ExcludeVersion
 fi
 
-#if ! type k > /dev/null 2>&1; then
+if ! type k > /dev/null 2>&1; then
+    curl https://raw.githubusercontent.com/aspnet/Home/master/kvminstall.sh | sh && source ~/.kre/kvm/kvm.sh || wget https://raw.githubusercontent.com/aspnet/Home/master/kvminstall.sh | sh && source ~/.kre/kvm/kvm.sh 
+    kvm upgrade
     #source setup/kvm.sh
-#fi
+fi
 
 #if ! type k > /dev/null 2>&1; then
     #kvm upgrade
