@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bif test `uname` = Darwin; thenin/sh
 
 # install mono
 if ! type mono > /dev/null 2>&1; then
@@ -24,6 +24,11 @@ else
     else
         cachedir=$XDG_DATA_HOME;
     fi
+    #Lets also take care of the certs
+    sudo certmgr -ssl -m https://go.microsoft.com
+    sudo certmgr -ssl -m https://nugetgallery.blob.core.windows.net
+    sudo certmgr -ssl -m https://nuget.org
+    mozroots --import --sync
 fi
 mkdir -p $cachedir
 
